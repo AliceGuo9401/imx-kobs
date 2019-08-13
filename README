@@ -1,3 +1,11 @@
-If you want to compile it in cross environment.
-Please try the following :
-	#./configure CC=arm-none-linux-gnueabihf-gcc --host=arm-none-linux-gnueabihf-gcc
+If you want to compile it in cross environment. Please try the following:
+32-bit:
+	#! /bin/bash
+	source /home/nxf55104/opt/environment-setup-cortexa9hf-neon-poky-linux-gnueabi
+	unset LDFALGS
+	unset CFLAGS
+	./configure  --build=arm-poky-linux-gnueabi-gcc --host=arm-poky-linux-gnueabi
+	make clean
+	make
+
+The compiled result is "/src/kobs-ng".
